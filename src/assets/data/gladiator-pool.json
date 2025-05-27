@@ -1,0 +1,21 @@
+{
+    "origines": ["gaulois", "romain", "grec"],
+    "prenoms": ["Brutus", "Cassius", "Titus", "Lucius"],
+    "skills": {
+        "tranchante": [1, 2],
+        "contondante": [0, 1],
+        "percante": [1, 3],
+        "distance": [0, 2]
+    },
+    "traits": [
+        { "id": "resistant", "rarity": "common" },
+        { "id": "rapide", "rarity": "rare" },
+        { "id": "furieux", "rarity": "epic" }
+    ],
+    "rarityChances": {
+        "common": 0.7,
+        "rare": 0.25,
+        "epic": 0.05
+    },
+    "virtusRange": [1.0, 1.5]
+}

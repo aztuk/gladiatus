@@ -1,0 +1,12 @@
+<div class="ludus-wrapper">
+    <div class="ludus-container">
+        <img src="assets/ludus/map5.png" class="map-background" alt="Carte du Ludus" />
+
+        <ng-container *ngFor="let b of buildings">
+            <div class="building-container" [style.left.px]="b.slot.x" [style.top.px]="b.slot.y" [style.width.px]="b.width" (click)="b.click()">
+                <img class="building-img" [src]="'assets/ludus/' + b.id + '.png'" [alt]="b.name" />
+                <!--<div class="building-label">{{ b.name }}</div>-->
+            </div>
+        </ng-container>
+    </div>
+</div>

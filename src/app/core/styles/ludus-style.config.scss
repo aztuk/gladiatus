@@ -1,0 +1,18 @@
+@use './theme.config.scss' as theme;
+// === DIMENSIONS & LAYOUT ===
+$ludus-aspect-ratio: 3 / 2;
+$ludus-height: 75dvh;
+$ludus-background-color: linear-gradient(to bottom, #378c9c 35%, #328f98 56%, #297f8c 89%);
+$ludus-map-background-color: transparent;
+// === BÂTIMENTS ===
+$ludus-building-offset-y: 95%;
+$ludus-building-z-index: 10;
+// === LABELS ===
+$ludus-label-font-size: 12px;
+$ludus-label-font-weight: bold;
+$ludus-label-color: white; // theme.$color-text;
+$ludus-label-font-family: theme.$font-heading;
+$ludus-label-shadow: 1px 1px 0 theme.$color-shadow;
+$ludus-label-border: none; //2px solid theme.$color-border;
+$ludus-label-background: transparent; //theme.$color-bg;
+$ludus-label-padding: 6px 16px;

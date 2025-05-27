@@ -1,0 +1,11 @@
+<div class="hud-reputation">
+    <div class="rep-icon">
+        <app-icon [icon]="faction.icon" size="auto" />
+    </div>
+
+    <div class="rep-label" [ngClass]="'rep-label--' + status()">
+        <span>{{ label() }} ({{ value() }})</span>
+    </div>
+
+    <div class="rep-name {{ faction.label }}">{{ faction.label }}</div>
+</div>

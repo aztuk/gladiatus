@@ -1,0 +1,25 @@
+.panel-frame {
+    display: flex;
+    flex-direction: column;
+    pointer-events: auto;
+    width: fit-content;
+    max-height: 80vh;
+    user-select: none;
+}
+
+.tabs-horizontal,
+.tabs-vertical {
+    button.active {
+        font-weight: bold;
+    }
+}
+
+.panel-content {
+    overflow-y: auto;
+}
+
+.panel-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}

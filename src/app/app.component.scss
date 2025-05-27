@@ -1,0 +1,21 @@
+.debug {
+    position: fixed;
+    z-index: 99999;
+    left: 10px;
+    top: 10px;
+    background: white;
+    color: black;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}

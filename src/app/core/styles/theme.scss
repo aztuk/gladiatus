@@ -1,0 +1,40 @@
+@use 'theme.config.scss' as *;
+@use 'mixins.scss' as mixins;
+@use 'sass:color';
+button {
+    // button structure
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 300ms cubic-bezier(0.075, 0.82, 0.165, 1) all;
+    // Button shape and style
+    position: relative;
+    border-radius: 0px;
+    // Font shape and style
+    color: $button-text-color;
+    text-shadow: 0 2px 2px $color-shadow;
+    font-family: $font-heading;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-style: normal;
+    &:hover {
+        filter: brightness(1.1);
+    }
+    &:active {
+        filter: brightness(0.9);
+    }
+    &.primary {
+        background: linear-gradient(to top, $color-success, color.adjust($color-success, $lightness: 5%));
+        @include mixins.specialBorder();
+        padding: 0 16px;
+        height: $button-size;
+    }
+    &.secondary {
+        color: $color-text;
+        text-shadow: none;
+        background: linear-gradient(to top, $color-muted, color.adjust($color-muted, $lightness: 5%));
+        @include mixins.specialBorder();
+        padding: 0 16px;
+        height: $button-size;
+    }
+}

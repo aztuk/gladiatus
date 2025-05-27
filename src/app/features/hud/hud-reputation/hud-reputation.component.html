@@ -1,0 +1,11 @@
+<!-- Affichage des réputations par faction -->
+<div class="hud-reputation">
+    <ng-container *ngFor="let faction of factions">
+        <app-hud-reputation-item [faction]="faction"></app-hud-reputation-item>
+        <!--<div class="rep-entry">
+            <div class="rep-progress">{{ reputations().get(faction.id) ?? 0 }}</div>
+            <app-icon [icon]="faction.icon" />
+            <div class="rep-label">{{ faction.label }} </div>
+        </div>-->
+    </ng-container>
+</div>

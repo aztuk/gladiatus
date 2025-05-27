@@ -1,0 +1,29 @@
+{
+    "gladiatorBaseCost": 120,
+    "profilesPerDraw": 2,
+    "allowTraitChance": 0.5,
+    "goldPerScorePoint": 3,
+
+    "baseStatsBounds": {
+        "attack": [1, 5],
+        "defense": [0, 3],
+        "precision": [40, 75],
+        "critical": [1, 10],
+        "vitesse": [5, 20],
+        "spectaculaire": [0, 8]
+    },
+    "weaponSkillBounds": {
+        "tranchante": [0, 3],
+        "contondante": [0, 3],
+        "percante": [0, 3],
+        "distance": [0, 3]
+    },
+    "rarityThresholds": {
+        "mediocre": 0,
+        "common": 40,
+        "rare": 70,
+        "epic": 85,
+        "legendary": 100
+    }
+
+}

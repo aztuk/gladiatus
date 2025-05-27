@@ -1,0 +1,19 @@
+<div class="hud-cycle">
+    <div class="cycle-header">
+        <span class="cycle-display "><span class="text">   {{ formattedCycle() }}</span></span>
+
+        <div class="controls">
+            <button (click)="togglePause()" *ngIf="speed() === 0"><app-icon-fa iconId="play"  class="text"/></button>
+            <button (click)="togglePause()" *ngIf="speed() > 0"><app-icon-fa iconId="pause"class="text" /></button>
+            <button (click)="setSpeed(2)"><span class="text">x2</span></button>
+            <button (click)="setSpeed(3)"><span class="text">x3</span></button>
+        </div>
+    </div>
+
+    <div class="cycle-bar">
+        <div class="progress-mask-1"></div>
+        <div class="progress-mask-2"></div>
+        <div class="progress-mask-3"></div>
+        <div class="progress-fill" [style.width.%]="progress() * 100"></div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+@use '../../../core/styles/theme.config.scss' as *;
+@use '../../../core/styles/hud-style.config.scss' as *;
+@use '../../../core/styles/mixins.scss' as *;
+@use 'sass:color';
+.hud-resources {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    padding: 6px;
+}
+
+.resource {
+    @include hudInnerFrame();
+    position: relative;
+    border-radius: 4px;
+    padding: 0 8px;
+    color: $hud-element-text-color;
+    font-weight: bold;
+    width: 100px;
+    text-align: right;
+    margin-left: 16px;
+    app-icon {
+        position: absolute;
+        left: -16px;
+        top: -9px;
+    }
+}

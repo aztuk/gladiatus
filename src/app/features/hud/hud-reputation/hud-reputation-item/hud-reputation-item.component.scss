@@ -1,0 +1,107 @@
+@use '../../../../core/styles/theme.config.scss' as *;
+@use '../../../../core/styles/hud-style.config.scss' as *;
+@use '../../../../core/styles/mixins.scss' as *;
+@use 'sass:color';
+:host {
+    flex: 1;
+    width: 100%;
+}
+
+.hud-reputation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+
+/*
+.rep-bar {}
+
+.rep-fill {}*/
+
+.rep-icon {
+    display: block;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    @include hudInnerFrame();
+    app-icon {
+        display: block;
+        position: relative;
+        width: 90px;
+        height: 90px;
+        left: -11px;
+        top: -9px;
+        filter: saturate(1.3) drop-shadow(0 1px 4px black) drop-shadow(0 2px 6px black);
+    }
+}
+
+.rep-name {
+    pointer-events: all;
+    &.Empereur {
+        @include hudInnerText($color-emperor);
+    }
+    &.Patriciens {
+        @include hudInnerText($color-pratician);
+    }
+    &.Peuple {
+        @include hudInnerText($color-people);
+    }
+    &.Armée {
+        @include hudInnerText($color-army);
+    }
+    font-size: 10px !important;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.rep-label {
+    &--ennemi {
+        background: $status-enemy;
+        span {
+            @include hudInnerText(rgb(218, 189, 157)); // rouge foncé
+            font-size: 11px !important;
+            font-weight: bold;
+        }
+    }
+    &--hostile {
+        background: $status-hostile;
+        span {
+            @include hudInnerText(rgb(218, 189, 157)); // rouge foncé
+            font-size: 11px !important;
+            font-weight: bold;
+        }
+    }
+    &--neutre {
+        background: $status-neutral;
+        span {
+            @include hudInnerText(rgb(218, 189, 157)); // rouge foncé
+            font-size: 11px !important;
+            font-weight: bold;
+        }
+    }
+    &--amical {
+        background: $status-friendly;
+        span {
+            @include hudInnerText(rgb(218, 189, 157)); // rouge foncé
+            font-size: 11px !important;
+            font-weight: bold;
+        }
+    }
+    &--allié {
+        background: $status-ally;
+        span {
+            @include hudInnerText(rgb(218, 189, 157)); // rouge foncé
+            font-size: 11px !important;
+            font-weight: bold;
+        }
+    }
+    display: flex;
+    padding: 2px 4px;
+    border-radius: 24px;
+    position: relative;
+    top: -2px;
+    border: 1px solid color.adjust($hud-element-background, $lightness: -10%);
+    border-bottom-width: 2px;
+}

@@ -1,0 +1,45 @@
+@use 'sass:color';
+// === PALETTE DE BASE ===
+$color-bg: #fff2b0;
+$color-surface: #fffdf8;
+$color-text: #241d14;
+$color-text-muted: #66543d;
+$color-muted: #e2c796;
+$color-border: #936c3b;
+$color-shadow:rgba(0, 0, 0, 0.533);
+$color-highlight:rgba(255, 255, 255, 0.533);
+$color-elevation-1: #ffee96;
+$color-elevation-2: #e4d27b;
+$color-elevation-3: #c5b45d;
+$color-elevation-4: #9e8f46;
+// === COULEURS DE RESSOURCES ===
+$color-gold: #f0c143;
+$color-prestige: #a083d9;
+$color-fame: #e94f37;
+$color-materials: #879d8e;
+// === COULEURS DE STATUT ===
+$color-success: #3a5733;
+$color-warning: #fbc02d;
+$color-danger: #f44336;
+$color-disabled: #999999;
+// === COULEURS DE FACTION ===
+$color-emperor: #d858ff;
+$color-people: #aab70e;
+$color-pratician: #ffba3e;
+$color-army: #ff401d;
+// === TYPOGRAPHIE ===
+$font-base: 'Inter',
+'Segoe UI',
+sans-serif;
+$font-heading : "Germania One",
+system-ui;
+// === Z-INDEX SYSTEME ===
+$z-base: 1;
+$z-overlay: 10;
+$z-tooltip: 20;
+$z-modal: 50;
+$z-debug: 100;
+// Buttons
+$button-size: 48px;
+$button-border-size: 4px;
+$button-text-color: #ffe8b9;

@@ -1,0 +1,7 @@
+<div class="gladiator-avatar">
+    <div [class]="getAvatarClass()"><img src="/assets/ui/gladiators/avatar-5.png" /></div>
+    <div class="name" *ngIf="name">{{ name }}</div>
+    <div class="origine" *ngIf="origine">
+        <app-icon [icon]="origineIcon[origine]" />
+    </div>
+</div>

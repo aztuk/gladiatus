@@ -1,0 +1,34 @@
+/**
+ * Style global des icônes illustrées PNG.
+ */
+
+img {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+.icon-xs {
+    width: 16px;
+    height: 16px;
+}
+
+.icon-sm {
+    width: 24px;
+    height: 24px;
+}
+
+.icon-md {
+    width: 48px;
+    height: 48px;
+}
+
+.icon-lg {
+    width: 80px;
+    height: 80px;
+}
+
+.icon-auto {
+    max-width: 100%;
+    //height: 80px;
+}

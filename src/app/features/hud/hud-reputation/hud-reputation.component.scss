@@ -1,0 +1,23 @@
+/**
+ * Styles des réputations de faction (affichage compact, icône + valeur)
+ */
+
+@use '../../../core/styles/theme.config.scss' as *;
+@use '../../../core/styles/hud-style.config.scss' as *;
+@use '../../../core/styles/mixins.scss' as *;
+@use 'sass:color';
+ :host {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    flex: 1;
+    padding: 0 16px;
+    top: -10px;
+    position: relative;
+}
+
+.hud-reputation {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}

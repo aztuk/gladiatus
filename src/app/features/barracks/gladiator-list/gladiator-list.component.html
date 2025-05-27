@@ -1,0 +1,8 @@
+<div class="gladiator-grid">
+    <div class="gladiator-card" *ngFor="let glad of gladiators" (click)="onSelect(glad.id)">
+        <div class="avatar"></div>
+        <div class="stats">
+            <pre>{{ glad | json }}</pre>
+        </div>
+    </div>
+</div>

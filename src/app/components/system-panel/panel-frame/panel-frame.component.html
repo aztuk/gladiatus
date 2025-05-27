@@ -1,0 +1,24 @@
+<div class="panel-frame" [style.z-index]="zIndex" [style.left.px]="position.x" [style.top.px]="position.y" (pointerdown)="startDrag($event)">
+
+    <!-- Bordures 9-slice -->
+    <div class="corner tl"></div>
+    <div class="corner tr"></div>
+    <div class="corner bl"></div>
+    <div class="corner br"></div>
+
+    <div class="edge top"></div>
+    <div class="edge bottom"></div>
+    <div class="edge left"></div>
+    <div class="edge right"></div>
+
+    <!-- Header -->
+    <div class="panel-header">
+        <div class="header-title">{{ title }}</div>
+        <button class="close-button" (click)="close()"></button>
+    </div>
+
+    <!-- Contenu projeté -->
+    <div class="panel-content">
+        <ng-content></ng-content>
+    </div>
+</div>

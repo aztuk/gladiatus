@@ -1,0 +1,9 @@
+<div class="barracks-container">
+    <div class="gladiator-list-wrapper">
+        <app-gladiator-list [gladiators]="gladiators()" (selectGladiator)="select($event)"></app-gladiator-list>
+    </div>
+
+    <div class="gladiator-panel-wrapper" *ngIf="getSelectedGladiator() as selected">
+        <app-gladiator-panel [gladiator]="selected"></app-gladiator-panel>
+    </div>
+</div>

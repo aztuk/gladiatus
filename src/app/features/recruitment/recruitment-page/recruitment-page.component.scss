@@ -1,0 +1,21 @@
+.recruitment-page {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 40px;
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .gold-display {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+    .candidate-list {
+        display: flex;
+        gap: 1rem;
+        justify-content: space-around;
+        align-items: stretch;
+    }
+}

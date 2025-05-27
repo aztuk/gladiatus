@@ -1,0 +1,23 @@
+<div class="panel" *ngIf="state">
+    <div class="header">
+        <h2>Fiche de {{ gladiator.id }}</h2>
+    </div>
+
+    <div class="stats">
+        <div><strong>Célébrité :</strong> {{ state.fame }}</div>
+        <div><strong>Fatigue :</strong> {{ state.fatigue }}</div>
+        <div><strong>Moral :</strong> {{ state.moral }}</div>
+        <div><strong>Virtus révélé :</strong> {{ state.virtusRevealed ? 'Oui' : 'Non' }}</div>
+    </div>
+
+    <div class="traits" *ngIf="state.traits.length > 0">
+        <h3>Traits actifs</h3>
+        <ul>
+            <li *ngFor="let trait of state.traits">{{ trait.traitId }} ({{ trait.source }})</li>
+        </ul>
+    </div>
+
+    <div *ngIf="state.traits.length === 0" class="no-traits">
+        Aucun trait actif.
+    </div>
+</div>

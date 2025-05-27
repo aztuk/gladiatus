@@ -1,0 +1,15 @@
+[{
+        "id": "iron_will",
+        "label": "Volonté de fer",
+        "type": "buff",
+        "duration": 4,
+        "effect": { "moral": 10 }
+    },
+    {
+        "id": "wrist_sprain",
+        "label": "Trac",
+        "type": "blessure",
+        "duration": 2,
+        "effect": { "charisme": -5 }
+    }
+]

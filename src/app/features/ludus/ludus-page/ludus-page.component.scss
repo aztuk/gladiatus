@@ -1,0 +1,55 @@
+@use 'app/core/styles/ludus-style.config.scss' as *;
+.ludus-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    width: 100vw;
+    background: $ludus-background-color;
+    overflow: hidden;
+}
+
+.ludus-container {
+    position: relative;
+    height: $ludus-height;
+    aspect-ratio: $ludus-aspect-ratio;
+    width: auto;
+    background-color: $ludus-map-background-color;
+    overflow: hidden;
+    .map-background {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        z-index: 1;
+    }
+    .building-container {
+        position: absolute;
+        transform: translate(-50%, -#{$ludus-building-offset-y});
+        z-index: $ludus-building-z-index;
+        text-align: center;
+        pointer-events: none;
+        &:hover .building-img {
+            filter: brightness(1.2);
+        }
+        .building-img {
+            pointer-events: auto;
+            cursor: pointer;
+        }
+        .building-label {
+            position: absolute;
+            bottom: 10px;
+            font-size: $ludus-label-font-size;
+            font-weight: $ludus-label-font-weight;
+            color: $ludus-label-color;
+            text-shadow: $ludus-label-shadow;
+            transform: translate(-50%);
+            background: $ludus-label-background;
+            border: $ludus-label-border;
+            // backdrop-filter: blur(5px);
+            display: inline-block;
+            padding: $ludus-label-padding;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+/**
+ * Style principal du bandeau HUD (barre fixe en bas d’écran)
+ */
+
+
+/*
+.center {
+    position: fixed;
+    height: 100vh;
+    width: 1px;
+    left: 50%;
+    background: red;
+}
+*/
+
+ :host {
+    position: fixed;
+    width: 1350px;
+    height: 170px;
+    bottom: 24px;
+    left: 50%;
+    pointer-events: none;
+    background: url(/assets/ui/hud2.png) no-repeat;
+    background-position: 90px center;
+    background-size: 87%;
+    z-index: 2000;
+    transform: translateX(-50%)
+}
+
+.hud-root {
+    position: absolute;
+    top: 46px;
+    bottom: 21px;
+    left: 252px;
+    right: 249px;
+    display: flex;
+    gap: 24px;
+}

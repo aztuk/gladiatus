@@ -1,0 +1,26 @@
+<div class="panel-frame" (mousedown)="bringToFront()">
+
+    <!-- PANEL CONTENT -->
+    <div *ngIf="tabsHorizontal?.length" class="tabs-horizontal">
+        <button *ngFor="let tab of tabsHorizontal" [class.active]="tab === activeTab" (click)="selectTab(tab)">
+        {{ tab }}
+      </button>
+    </div>
+
+    <div class="panel-body-wrapper">
+        <div *ngIf="tabsVertical?.length" class="tabs-vertical">
+            <button *ngFor="let tab of tabsVertical" [class.active]="tab === activeTab" (click)="selectTab(tab)">
+          {{ tab }}
+        </button>
+        </div>
+        <div class="panel-content">
+            <ng-content></ng-content>
+        </div>
+    </div>
+
+    <div *ngIf="footerText || showConfirm" class="panel-footer">
+        <div class="footer-text">{{ footerText }}</div>
+        <button *ngIf="showConfirm" (click)="confirm()">{{ confirmLabel }}</button>
+        <ng-content select="[panel-footer]"></ng-content>
+    </div>
+</div>
