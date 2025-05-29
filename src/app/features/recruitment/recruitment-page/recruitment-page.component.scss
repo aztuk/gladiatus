@@ -1,20 +1,11 @@
 .recruitment-page {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    padding: 40px;
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .gold-display {
-        font-weight: bold;
-        font-size: 1.2rem;
-    }
+    justify-content: center;
+    align-items: center;
     .candidate-list {
         display: flex;
-        gap: 1rem;
+        gap: 40px;
         justify-content: space-around;
         align-items: stretch;
     }

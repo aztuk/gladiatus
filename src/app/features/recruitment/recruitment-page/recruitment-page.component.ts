@@ -1,6 +1,6 @@
 import { Component, computed, effect, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GladiatorCardComponent } from '../gladiator-card/gladiator-card.component';
+import { GladiatorCandidateCardComponent } from '../gladiator-candidate-card/gladiator-candidate-card.component';
 import { RecruitmentService } from '../services/recruitment.service';
 import { GameContextService } from '../../../core/context/game-context.service';
 import { GladiatorCandidate } from '../../../core/models/gladiator.model';
@@ -9,7 +9,7 @@ import { IconComponent } from '../../../components/icon/icon-illustration/icon.c
 @Component({
   selector: 'app-recruitment-page',
   standalone: true,
-  imports: [CommonModule, GladiatorCardComponent],
+  imports: [CommonModule, GladiatorCandidateCardComponent],
   templateUrl: './recruitment-page.component.html',
   styleUrls: ['./recruitment-page.component.scss']
 })

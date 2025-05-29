@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GladiatorCardComponent } from './gladiator-card.component';
+import { GladiatorTraitsComponent } from './gladiator-traits.component';
 
-describe('GladiatorCardComponent', () => {
-  let component: GladiatorCardComponent;
-  let fixture: ComponentFixture<GladiatorCardComponent>;
+describe('GladiatorTraitsComponent', () => {
+  let component: GladiatorTraitsComponent;
+  let fixture: ComponentFixture<GladiatorTraitsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GladiatorCardComponent]
+      imports: [GladiatorTraitsComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GladiatorCardComponent);
+    fixture = TestBed.createComponent(GladiatorTraitsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

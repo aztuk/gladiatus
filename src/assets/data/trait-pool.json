@@ -1,15 +1,32 @@
 [{
-        "id": "iron_will",
+        "id": "volonte_de_fer",
         "label": "Volonté de fer",
         "type": "buff",
-        "duration": 4,
+        "duration": 12,
         "effect": { "moral": 10 }
     },
+
     {
-        "id": "wrist_sprain",
-        "label": "Trac",
+        "id": "poigne_foule",
+        "label": "Poigné foulé",
         "type": "blessure",
-        "duration": 2,
-        "effect": { "charisme": -5 }
+        "duration": 6,
+        "effect": { "attack": -2 }
+    },
+
+    {
+        "id": "trac",
+        "label": "Trac",
+        "type": "malus",
+        "duration": 3,
+        "effect": { "moral": -5 }
+    },
+
+    {
+        "id": "forgeron_fils",
+        "label": "Fils de forgeron",
+        "type": "narratif",
+        "duration": 999,
+        "effect": {}
     }
 ]

@@ -1,0 +1,13 @@
+<div class="stats-container">
+    <div class="head">Armes</div>
+
+    <div *ngFor="let skill of weaponSkillKeys" class="stat">
+        <div class="stat-id">
+            <app-icon [icon]="getIcon(skill)" />
+
+        </div>
+        <div class="value-container">
+            <span class="value">{{ skills[skill] ?? 0 }}</span>
+        </div>
+    </div>
+</div>

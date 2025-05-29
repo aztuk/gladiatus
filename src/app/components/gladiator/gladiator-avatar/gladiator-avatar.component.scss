@@ -27,11 +27,8 @@
     }
     .origine {
         position: absolute;
-        font-size: 0.8rem;
-        color: #777;
+        top: 125px;
+        filter: drop-shadow(0 1px 3px rgba(black, .4)) drop-shadow(0 2px 5px rgba(black, .4));
+        right: 0;
     }
-}
-
-.avatar {
-    img {}
 }

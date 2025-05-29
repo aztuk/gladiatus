@@ -19,6 +19,7 @@ import { CommonModule } from '@angular/common';
 })
 export class SystemPanelComponent {
   @Input() title = '';
+  @Input() description = '';
   @Input() showClose = true;
   @Input() showConfirm = false;
   @Input() confirmLabel = 'Valider';

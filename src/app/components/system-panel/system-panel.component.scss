@@ -1,25 +1,8 @@
-.panel-frame {
-    display: flex;
-    flex-direction: column;
-    pointer-events: auto;
-    width: fit-content;
-    max-height: 80vh;
-    user-select: none;
-}
+.panel-frame {}
 
 .tabs-horizontal,
-.tabs-vertical {
-    button.active {
-        font-weight: bold;
-    }
-}
+.tabs-vertical {}
 
-.panel-content {
-    overflow-y: auto;
-}
+.panel-content {}
 
-.panel-footer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1rem;
-}
+.panel-footer {}

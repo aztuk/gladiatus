@@ -1,0 +1,159 @@
+@use '../../../core/styles/hud-style.config.scss' as *;
+@use '../../../core/styles/theme.config.scss' as *;
+@use '../../../core/styles/mixins.scss' as *;
+@use 'sass:color';
+:host {
+    position: relative;
+    width: 190px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        background-position: center center;
+        background-image: url('/assets/ui/frame/gladiator-panel.png');
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 0;
+        border-radius: 4px;
+        @include hudInnerFrame(#4228102c,
+        #d47d30);
+    }
+    &.mediocre {
+        &::before {
+            @include hudInnerFrame(#4228102c,
+            #d47d30);
+        }
+        &::after {
+            box-shadow: 0 0 32px #d47d30, inset 0 0 32px #d47d308c;
+        }
+        button {
+            @include hudInnerButton(#d47d30,
+            white);
+        }
+    }
+    &.rare {
+        &::before {
+            @include hudInnerFrame(#4228102c,
+            #299bff);
+        }
+        &::after {
+            filter: hue-rotate(170deg);
+        }
+        button {
+            @include hudInnerButton(#299bff,
+            white);
+        }
+    }
+    &.epic {
+        &::before {
+            @include hudInnerFrame(#4228102c,
+            #7b49ca);
+        }
+        &::after {
+            filter: hue-rotate(230deg);
+        }
+        button {
+            @include hudInnerButton(#7b49ca,
+            white);
+        }
+    }
+    &.legendary {
+        &::before {
+            @include hudInnerFrame(#4228102c,
+            #ecbb34);
+        }
+        &::after {
+            filter: hue-rotate(16deg);
+        }
+        button {
+            @include hudInnerButton(#ecbb34,
+            white);
+        }
+    }
+    &.common {
+        &::before {
+            @include hudInnerFrame(#4228102c,
+            #42ce3d);
+        }
+        &::after {
+            filter: hue-rotate(56deg);
+        }
+        button {
+            @include hudInnerButton(#42ce3d,
+            white);
+        }
+    }
+}
+
+.damage {
+    @include statLine();
+}
+
+app-gladiator-avatar {
+    position: relative;
+    z-index: 2;
+    margin-bottom: -40px;
+}
+
+app-gladiator-traits {
+    padding: 4px 6px;
+}
+
+.info {
+    background: rgba(black, .4);
+    width: 100%;
+    padding-top: 24px;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    padding: 8px 16px;
+    margin-top: 8px;
+    height: 40px;
+    position: absolute;
+    bottom: -52px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    .cost {
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+        app-icon {
+            position: relative;
+            top: -2px;
+        }
+        @include hudInnerText(white);
+    }
+}

@@ -1,5 +1,5 @@
 <ng-container *ngFor="let panel of ui.openPanels(); trackBy: trackById">
-    <app-panel-frame [zIndex]="panel.zIndex" [title]="panel.props?.['title']" (closed)="ui.close(panel.id)">
+    <app-panel-frame [description]="panel.props?.['description']" [zIndex]="panel.zIndex" [title]="panel.props?.['title']" (closed)="ui.close(panel.id)">
         <app-system-panel [title]="panel.props?.['title']" [showConfirm]="panel.props?.['showConfirm']" [confirmLabel]="panel.props?.['confirmLabel']" (closed)="ui.close(panel.id)" (confirmed)="panel.props?.['onConfirm']?.()" (click)="ui.bringToFront(panel.id)">
             <ng-container *ngComponentOutlet="panel.component"></ng-container>
         </app-system-panel>

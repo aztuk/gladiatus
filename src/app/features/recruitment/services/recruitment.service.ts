@@ -45,12 +45,12 @@ export class RecruitmentService {
 
     this.executeRecruitment(glad, candidate.cost);
 
-    if (candidate.traitId) {
+    if (candidate.trait) {
       this.effectEngine.applyEffects([
         {
           type: EffectTypes.GainTrait,
           targetId: glad.id,
-          traitId: candidate.traitId
+          traitId: candidate.trait.traitId
         }
       ]);
     }
@@ -113,6 +113,7 @@ export class RecruitmentService {
   }
 
   private generateSingleCandidate(): GladiatorCandidate {
+
     return generateGladiatorCandidate(
       recruitmentConfig,
       gladiatorPool,

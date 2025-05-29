@@ -15,17 +15,14 @@ export class UiPanelService {
 
   readonly openPanels = computed(() => this.panels());
 
-  open(key: string, component: Type<unknown>, props?: Record<string, any>) {
-    if (this.panels().some(p => p.key === key)) return;
-
-    const id = crypto.randomUUID();
-    this.counter++;
-
-    this.panels.update(p => [
-      ...p,
-      { id, key, component, props, zIndex: this.counter }
-    ]);
-  }
+open(key: string, component: Type<unknown>, props?: Record<string, any>) {
+  this.closeAll(); // ← ferme les autres
+  const id = crypto.randomUUID();
+  this.counter++;
+  this.panels.set([
+    { id, key, component, props, zIndex: this.counter }
+  ]);
+}
 
   close(id: string) {
     this.panels.update(p => p.filter(p => p.id !== id));

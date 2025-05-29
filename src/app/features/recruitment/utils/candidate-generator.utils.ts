@@ -16,6 +16,7 @@ import { RecruitmentConfig } from '../../../core/models/json/recruitment-config.
 import { GladiatorPoolData } from '../../../core/models/json/gladiator-pool.model';
 import { NamePool } from '../../../core/models/json/name-pool.model';
 import { TraitDefinition } from '../../../core/models/json/trait-pool.model';
+import { TraitInstance } from '../../../core/models/trait.model';
 
 export function generateGladiatorCandidate(
   config: RecruitmentConfig,
@@ -26,7 +27,7 @@ export function generateGladiatorCandidate(
   const origine = randomFromArray(pool.origines);
   const name = randomFromArray(namePool[origine] ?? ['Inconnu']);
   const virtus = parseFloat(randomInRange(pool.virtusRange[0], pool.virtusRange[1]).toFixed(2));
-  const avatarId = randomInt(1, 24);
+  const avatarId = randomInt(1, 8);
   const weaponSkills: Partial<Record<WeaponSkill, number>> = {};
   for (const key of Object.keys(pool.skills) as WeaponSkill[]) {
     const [min, max] = config.weaponSkillBounds[key];
@@ -35,13 +36,16 @@ export function generateGladiatorCandidate(
 
   const baseStats: Partial<Record<BaseStat, number>> = generateBaseStats(config);
 
-  let traitId: string | undefined = undefined;
+
+  let trait: TraitInstance | undefined;
   if (Math.random() < config.allowTraitChance) {
-    const traitPoolFiltered = traitPool.filter(t => t.gravity !== 'grave');
-    if (traitPoolFiltered.length > 0) {
-      traitId = randomFromArray(traitPoolFiltered).id;
-    }
+    const def = randomFromArray(traitPool);
+    trait = {
+      traitId: def.id,
+      remaining: def.duration
+    };
   }
+
 
   const candidate: GladiatorCandidate = {
     id: uuid(),
@@ -50,7 +54,7 @@ export function generateGladiatorCandidate(
     origine,
     baseStats,
     weaponSkills,
-    traitId,
+    trait,
     virtus,
     rarity: 'common',
     cost: 0
@@ -86,7 +90,12 @@ function computeRarityScore(candidate: GladiatorCandidate, config: RecruitmentCo
   }, 0) / Object.keys(config.weaponSkillBounds).length;
 
   const virtusScore = normalize(candidate.virtus, 1.0, 1.5);
-  const traitScore = candidate.traitId ? 1 : 0;
+  const traitScore = candidate.trait ? 1 : 0;
+
+  console.log('baseStats', baseStatsScore);
+  console.log('skillScore', skillScore);
+  console.log('virtusScore', virtusScore);
+  console.log('traitScore', traitScore);
 
   return (
     baseStatsScore * 40 +

@@ -1,0 +1,18 @@
+<div class="card {{ candidate.rarity }}">
+    <app-gladiator-avatar [avatarId]="candidate.avatarId" [name]="candidate.name" [origine]="candidate.origine "></app-gladiator-avatar>
+    <div class="info ">
+        <div class="stats">
+            <div class="damage bigger">
+                <div class="stat-id">
+                    <app-icon icon="attack" size="xs" /> Dégats
+                </div>
+                <div class="value-container">
+                    <strong class="value">{{ damage() | number: '1.0-1' }}</strong>
+                </div>
+            </div>
+            <app-gladiator-stats [stats]="candidate.baseStats" [exclude]="[BaseStat.Attack]" />
+
+            <app-gladiator-traits *ngIf="candidate.trait" [traits]="[candidate.trait]" />
+            <button (click)="recruitClicked.emit()" [disabled]="!canRecruit"><span class="text">Recruter</span> <span class="cost"><app-icon icon="gold" size="xs" />{{ candidate.cost }}</span> </button>
+        </div>
+    </div>

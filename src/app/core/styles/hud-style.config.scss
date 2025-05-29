@@ -2,6 +2,7 @@
 @use './mixins.scss' as mixins;
 @use 'sass:color';
 $hud-element-background: #331c06;
+$hud-element-border: #7a570c;
 $hud-element-decoration: inset 0 0 8px 0 rgba(0, 0, 0, 0.089),
 0 0 0 1px #110901e8,
 0 0 0 2px #331c06,
@@ -17,33 +18,36 @@ $status-enemy: #6f1f1f;
 $status-friendly: #143b17;
 $status-hostile: #532104;
 $status-neutral: $hud-element-background;
-@mixin hudInnerFrame() {
-    background: $hud-element-background;
-    box-shadow: $hud-element-decoration;
+@mixin hudInnerFrame($color, $border) {
+    background: linear-gradient(to top, $color, color.adjust($color, $lightness: 10%));
+    @include specialBorders($border);
     .text {
         @include mixins.hudInnerText();
     }
 }
 
-@mixin hudInnerButton($color: #502b09) {
+@mixin hudInnerButton($color: #502b09, $text: #ffdd47) {
     &:before {
         position: absolute;
-        top: 1px;
-        bottom: 1px;
-        left: 1px;
-        right: 1px;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
         content: '';
-        background: $color;
+        background: linear-gradient(to top, $color 35%, color.adjust($color, $lightness: 5%));
         z-index: 1;
         border-radius: 3px;
-        box-shadow: inset 2px 2px 0 0 color.adjust($color, $lightness: 5%);
+        box-shadow: inset 0px 2px 0 0 color.adjust($color, $lightness: 15%);
     }
     border-radius: 3px;
-    background: $hud-element-background;
-    box-shadow: $hud-element-decoration;
+    @include hudInnerFrame($color, color.adjust($color, $lightness: 10%));
     .text {
         position: relative;
-        @include mixins.hudInnerText();
         z-index: 2;
+        color: $text;
     }
+}
+
+@mixin specialBorders($border) {
+    box-shadow: inset 0 0 8px 0 rgba(0, 0, 0, 0.089), 0 0 0 1px #110901e8, 0 0 1px 1px color.adjust($border, $lightness: -25%), 0 0 2px 2px color.adjust($border, $lightness: -15%), -1px -1px 0 2px $border, 1px 1px 0 2px color.adjust($border, $lightness: -15%), 0 0 3px 3px #110901e8, 0 0 0px 3px color.adjust($border, $lightness: -25%);
 }

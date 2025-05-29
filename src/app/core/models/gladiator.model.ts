@@ -23,10 +23,10 @@ export enum GladiatorStatus {
 export enum BaseStat {
   Attack = 'attack',               // Dégâts de fatigue infligés
   Defense = 'defense',             // Réduction des dégâts subis
+  Vitesse = 'vitesse'      ,      // Fréquence d’attaque (affecte initiative ou tour)
   Precision = 'precision',         // % de chance de toucher
   Critical = 'critical',           // % de chance de double dégâts
-  Vitesse = 'vitesse',             // Fréquence d’attaque (affecte initiative ou tour)
-  Spectaculaire = 'spectaculaire'  // % de chance d’un effet spécial (à renommer si besoin)
+  Spectaculaire = 'spectaculaire',  // % de chance d’un effet spécial (à renommer si besoin)
 }
 
 /**
@@ -36,7 +36,7 @@ export enum WeaponSkill {
   Distance = 'distance',       // Arc, fronde, etc.
   Tranchante = 'tranchante',   // Glaive, épée...
   Contondante = 'contondante', // Gourdin, marteau...
-  Percante = 'percante'        // Trident, lance...
+  Perçante = 'perçante'        // Trident, lance...
 }
 
 /**
@@ -92,18 +92,17 @@ export interface Gladiator {
  * Représente un gladiateur proposé dans le panel de recrutement, avant transformation en Gladiator complet.
  */
 export interface GladiatorCandidate {
-  id: string; // ID temporaire de profil
+  id: string;
   avatarId: number;
   name: string;
   origine: Origine;
   baseStats: Partial<Record<BaseStat, number>>;
   weaponSkills: Partial<Record<WeaponSkill, number>>;
-  traitId?: string;
+  trait?: TraitInstance; // ✅ Remplace traitId
   virtus: number;
   rarity: string;
   cost: number;
 }
-
 
 /**
  * État individuel d’un gladiateur (hors équipement ou visuel).

@@ -1,60 +1,135 @@
-@use 'theme.config.scss' as *;
-@use 'sass:color';
-@mixin bigFrameSingleText() {
-    &::before {
-        position: absolute;
-        content: '';
-        background-image: url('/assets/ui/frame/header-left.png');
-        background-size: contain;
-        background-position: 0 0px;
-        top: -2px;
-        left: -34px;
+    @use 'theme.config.scss' as *;
+    @use 'sass:color';
+    @mixin bigFrameSingleText() {
+        &::before {
+            position: absolute;
+            content: '';
+            background-image: url('/assets/ui/frame/header-left.png');
+            background-size: contain;
+            background-position: 0 0px;
+            top: -2px;
+            left: -34px;
+            height: 48px;
+            width: 35px;
+        }
+        &::after {
+            position: absolute;
+            content: '';
+            background-image: url('/assets/ui/frame/header-right.png');
+            background-size: contain;
+            background-position: 0 0px;
+            top: -2px;
+            right: -35px;
+            height: 48px;
+            width: 36px;
+        }
+        filter: saturate(0.9);
+        position: relative;
         height: 48px;
-        width: 35px;
-    }
-    &::after {
-        position: absolute;
-        content: '';
-        background-image: url('/assets/ui/frame/header-right.png');
+        // Comportement
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // Style background
+        background-image: url('/assets/ui/frame/header-center.png');
         background-size: contain;
-        background-position: 0 0px;
-        top: -2px;
-        right: -35px;
-        height: 48px;
-        width: 36px;
+        background-position: 0 -2px;
+        // Style text
+        font-weight: bold;
+        font-size: 1rem;
+        color: #3a2e1a;
+        font-family: $font-heading;
+        text-transform: uppercase;
     }
-    filter: saturate(0.9);
-    position: relative;
-    height: 48px;
-    // Comportement
-    padding: 0 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    // Style background
-    background-image: url('/assets/ui/frame/header-center.png');
-    background-size: contain;
-    background-position: 0 -2px;
-    // Style text
-    font-weight: bold;
-    font-size: 1rem;
-    color: #3a2e1a;
-    font-family: $font-heading;
-    text-transform: uppercase;
-}
 
-@mixin specialBorder($size: $button-border-size,
-$color: $color-border) {
-    box-shadow: inset 0 0 $size 0px $color-shadow, 0 0 0 calc($size - 2px) $color, 0 0 0 $size color.adjust($color, $lightness: 9%), 0 0 0 calc($size + 1px) color.adjust($color, $lightness: -5%);
-}
+    @mixin specialBorder($size: $button-border-size,
+    $color: $color-border) {
+        box-shadow: inset 0 0 $size 0px $color-shadow, 0 0 0 calc($size - 2px) $color, 0 0 0 $size color.adjust($color, $lightness: 9%), 0 0 0 calc($size + 1px) color.adjust($color, $lightness: -5%);
+    }
 
-@mixin hudInnerText($color: #ffdd47) {
-    filter: drop-shadow(0 0px 1px black) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.336)) drop-shadow(0 0px 0px black);
-    color: $color;
-    font-size: 18px;
-}
+    @mixin hudInnerText($color: #ffdd47,
+    $font-size: 18px) {
+        filter: drop-shadow(0 0px 1px black) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.336)) drop-shadow(0 0px 0px black);
+        color: $color;
+        font-size: $font-size;
+    }
 
-@mixin progressBar($color: #bb7900) {
-    background: $color;
-    box-shadow: inset 0 4px 0 0 color.adjust($color, $lightness: 5%);
-}
+    @mixin progressBar($color: #bb7900) {
+        background: $color;
+        box-shadow: inset 0 4px 0 0 color.adjust($color, $lightness: 5%);
+    }
+
+    @mixin textStroke($color: black) {
+        text-shadow: -1px -1px 0 $color, 1px -1px 0 $color, -1px 1px 0 $color, 1px 1px 0 $color;
+    }
+
+    @mixin globalShadow() {
+        filter: drop-shadow(0 0px 1px black) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.336)) drop-shadow(0 0px 0px black);
+    }
+
+    @mixin gradientText($color1,
+    $color2) {
+        background-image: linear-gradient(to top, $color1 30%, $color2 70%);
+        color: transparent;
+        background-clip: text;
+    }
+
+    @mixin statLine() {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 4px 8px 4px 6px;
+        margin: 0 4px;
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: baseline;
+        gap: 8px;
+        border-bottom: 1px solid #8a752a33;
+        &.bigger {
+            padding: 6px 8px 6px 6px;
+            background: #8a752a1a;
+            border-radius: 4px;
+            .stat-id {
+                font-size: 16px;
+                color: #ffffff;
+            }
+            .value {
+                font-size: 16px;
+                color: #ffffff;
+            }
+        }
+        .stat-id {
+            flex: 1;
+            font-size: 13px;
+            font-weight: 700;
+            position: relative;
+            font-variation-settings: "wdth" 80;
+            color: #b6a55c;
+            @include globalShadow();
+        }
+        .value-container {
+            display: flex;
+            align-items: baseline;
+        }
+        .value {
+            text-align: right;
+            color: #af8937;
+            font-size: 13px;
+            font-weight: 700;
+            font-variation-settings: "wdth" 100;
+            @include globalShadow();
+        }
+        .unit {
+            font-size: 10px;
+            margin-left: 4px;
+            color: #af8937;
+            width: 10px;
+        }
+        app-icon {
+            position: relative;
+            top: -2px;
+            opacity: .5;
+        }
+    }

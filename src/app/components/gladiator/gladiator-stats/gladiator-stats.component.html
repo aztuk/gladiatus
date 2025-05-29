@@ -1,0 +1,10 @@
+<div class="stats-container">
+    <div class="stat {{stat}}" *ngFor="let stat of displayedStats()">
+        <div class="stat-id">
+            <app-icon [icon]="getIcon(stat.key)" class="icon" /> {{ getLabel(stat.key) }}
+        </div>
+        <div class="value-container">
+            <span class="value">{{ stats[stat.key] ?? '–' }}<span class="unit"  *ngIf="stat.key === 'precision' || stat.key === 'critical'  || stat.key === 'spectaculaire' ">%</span></span>
+        </div>
+    </div>
+</div>

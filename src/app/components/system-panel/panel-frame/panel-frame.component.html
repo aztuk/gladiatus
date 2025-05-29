@@ -1,6 +1,6 @@
-<div class="panel-frame" [style.z-index]="zIndex" [style.left.px]="position.x" [style.top.px]="position.y" (pointerdown)="startDrag($event)">
+<div class="panel-frame">
 
-    <!-- Bordures 9-slice -->
+    <!-- Bordures 9-slice
     <div class="corner tl"></div>
     <div class="corner tr"></div>
     <div class="corner bl"></div>
@@ -10,11 +10,15 @@
     <div class="edge bottom"></div>
     <div class="edge left"></div>
     <div class="edge right"></div>
-
+-->
     <!-- Header -->
     <div class="panel-header">
-        <div class="header-title">{{ title }}</div>
-        <button class="close-button" (click)="close()"></button>
+        <div class="header-title"><span class="text">{{ title }}</span> </div>
+        <button class="close-button" (click)="close()">X</button>
+    </div>
+
+    <div class="description">
+        {{ description }}
     </div>
 
     <!-- Contenu projeté -->

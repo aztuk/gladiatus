@@ -1,5 +1,6 @@
-import { BaseStat, Origine } from "../../core/models/gladiator.model"
+import { BaseStat, Origine, WeaponSkill } from "../../core/models/gladiator.model"
 import { FactionId } from "../../core/models/reputation.model"
+import { TraitType } from "../../core/models/trait.model"
 
 
 export type IconIllustrationId =
@@ -19,12 +20,20 @@ export type IconIllustrationId =
   | 'grec'
   | 'romain'
   | 'gaulois'
+  | 'blessure'
+  | 'malus'
+  | 'buff'
+  | 'narratif'
+  | 'distance'
+  | 'tranchante'
+  | 'contondante'
+  | 'perçante'
   // etc.
 
 export interface IconIllustrationDefinition {
   src: string
   alt: string
-  size?: 'xs' | 'md' | 'md' | 'lg'
+  size?: 'xs' | 'sm' | 'md' | 'lg'
   class?: string // ex: pour forcer un fond sombre ou un encadré
 }
 
@@ -50,32 +59,32 @@ export const ICON_ILLUSTRATION_MAP: Record<IconIllustrationId, IconIllustrationD
   attack: {
     src: 'assets/ui/icons/stats/attack.png',
     alt: 'Matériaux',
-    size: 'md'
+    size: 'xs'
   },
   defense: {
     src: 'assets/ui/icons/stats/defense.png',
     alt: 'Matériaux',
-    size: 'md'
+    size: 'xs'
   },
   precision: {
     src: 'assets/ui/icons/stats/precision.png',
     alt: 'Matériaux',
-    size: 'md'
+    size: 'xs'
   },
   critical: {
     src: 'assets/ui/icons/stats/critical.png',
     alt: 'Matériaux',
-    size: 'md'
+    size: 'xs'
   },
   speed: {
     src: 'assets/ui/icons/stats/speed.png',
     alt: 'Matériaux',
-    size: 'md'
+    size: 'xs'
   },
   spectacular: {
     src: 'assets/ui/icons/stats/spectacular.png',
     alt: 'Matériaux',
-    size: 'md'
+    size: 'xs'
   }
 
   // Factions
@@ -118,6 +127,52 @@ export const ICON_ILLUSTRATION_MAP: Record<IconIllustrationId, IconIllustrationD
     alt: 'Empereur',
     size: 'lg'
   }
+
+  // Traits type
+  ,
+  blessure: {
+    src: 'assets/ui/icons/traits/blessure.png',
+    alt: 'Empereur',
+    size: 'xs'
+  },
+  buff: {
+    src: 'assets/ui/icons/traits/buff.png',
+    alt: 'Empereur',
+    size: 'xs'
+  },
+  malus: {
+    src: 'assets/ui/icons/traits/malus.png',
+    alt: 'Empereur',
+    size: 'xs'
+  },
+  narratif: {
+    src: 'assets/ui/icons/traits/narratif.png',
+    alt: 'Empereur',
+    size: 'xs'
+  }
+
+  // Weapon types
+  ,
+  distance: {
+    src: 'assets/ui/icons/weaponType/distance.png',
+    alt: 'Empereur',
+    size: 'xs'
+  },
+  contondante: {
+    src: 'assets/ui/icons/weaponType/contondante.png',
+    alt: 'Empereur',
+    size: 'xs'
+  },
+  tranchante: {
+    src: 'assets/ui/icons/weaponType/tranchante.png',
+    alt: 'Empereur',
+    size: 'xs'
+  },
+  perçante: {
+    src: 'assets/ui/icons/weaponType/perçante.png',
+    alt: 'Empereur',
+    size: 'xs'
+  }
 }
 
 /**
@@ -125,7 +180,19 @@ export const ICON_ILLUSTRATION_MAP: Record<IconIllustrationId, IconIllustrationD
  * d’icône illustrée (PNG) utilisé dans l’interface (profil, HUD, combat...).
  */
 
+export const WEAPONSKILL_ICON_MAP: Record<WeaponSkill, IconIllustrationId> = {
+  distance: 'distance',
+  contondante: 'contondante',
+  tranchante: 'tranchante',       // ← prévoir les fichiers PNG correspondants
+  perçante: 'perçante'
+};
 
+export const TRAIT_TYPE_ICON_MAP: Record<TraitType, IconIllustrationId> = {
+  blessure: 'blessure',
+  buff: 'buff',
+  malus: 'malus',
+  narratif: 'narratif'
+};
 
 export const BASE_STAT_ICON_MAP: Record<BaseStat, IconIllustrationId> = {
   attack: 'attack',
@@ -135,6 +202,15 @@ export const BASE_STAT_ICON_MAP: Record<BaseStat, IconIllustrationId> = {
   vitesse: 'speed',
   spectaculaire: 'spectacular'
 };
+export const BASE_STAT_LABEL_MAP: Record<BaseStat, string> = {
+  attack: 'Attaque',
+  defense: 'Défense',
+  precision: 'Précision',
+  critical: 'Critique',
+  vitesse: 'Vitesse',
+  spectaculaire: 'Spectacle'
+};
+
 
 
 export const FACTION_ICON_MAP: Record<FactionId, IconIllustrationId> = {
@@ -150,3 +226,5 @@ export const ORIGIN_ICON_MAP: Record<Origine, IconIllustrationId> = {
   gaulois: 'gaulois',
   romain: 'romain'
 };
+
+

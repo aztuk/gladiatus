@@ -31,6 +31,7 @@ export class LudusComponent {
   openRecruitmentPanel() {
     this.panel.open('recruitment', RecruitmentPageComponent, {
       title: 'Forum',
+      description: 'Sélectionnez un gladiateur à recruter',
       showClose: true
     });
   }

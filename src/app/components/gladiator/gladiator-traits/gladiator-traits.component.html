@@ -1,0 +1,6 @@
+<!-- Affiche une liste de chips stylisées selon le type de trait -->
+<div class="trait-list">
+    <div *ngFor="let trait of traits" class="trait-chip" [ngClass]="getType(trait)">
+        <app-icon [icon]="iconMap[getType(trait)]" /> <span class="text"> {{ getLabel(trait) }}</span>
+    </div>
+</div>

@@ -1,6 +1,13 @@
 @use 'theme.config.scss' as *;
 @use 'mixins.scss' as mixins;
 @use 'sass:color';
+body {
+    font-family: $font-base;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-optical-sizing: auto;
+}
+
 button {
     // button structure
     display: flex;
@@ -12,10 +19,7 @@ button {
     border-radius: 0px;
     // Font shape and style
     color: $button-text-color;
-    text-shadow: 0 2px 2px $color-shadow;
     font-family: $font-heading;
-    font-weight: 600;
-    text-transform: uppercase;
     font-style: normal;
     &:hover {
         filter: brightness(1.1);

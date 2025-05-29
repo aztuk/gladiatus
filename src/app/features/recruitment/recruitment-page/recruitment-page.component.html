@@ -1,11 +1,6 @@
 <div class="recruitment-page">
-    <!--<div class="header">
-        <button (click)="drawCandidates()" class="secondary">Tirer de nouveaux profils</button>
-        <div class="gold-display">
-            <app-icon icon="gold"></app-icon> Or : {{ gold() }}</div>
-    </div>-->
-
     <div class="candidate-list">
-        <app-gladiator-card *ngFor="let candidate of candidates()" [candidate]="candidate" [canRecruit]="candidate.cost <= gold()" (recruitClicked)="recruit(candidate)" />
+        <app-gladiator-candidate-card *ngFor="let candidate of candidates()" [candidate]="candidate" [canRecruit]="candidate.cost <= gold()" (recruitClicked)="recruit(candidate)" />
     </div>
+    <!-- <button (click)="drawCandidates()" class="secondary">Tirer de nouveaux profils</button> -->
 </div>

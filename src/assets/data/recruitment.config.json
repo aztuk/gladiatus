@@ -15,7 +15,7 @@
     "weaponSkillBounds": {
         "tranchante": [0, 3],
         "contondante": [0, 3],
-        "percante": [0, 3],
+        "perçante": [0, 3],
         "distance": [0, 3]
     },
     "rarityThresholds": {
