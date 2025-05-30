@@ -13,8 +13,8 @@ import { IconComponent } from "../../icon/icon-illustration/icon.component";
 })
 export class GladiatorAvatarComponent {
   @Input() avatarId!: number;
+  @Input() origine!: Origine;
   @Input() name?: string;
-  @Input() origine?: Origine;
   @Input() size?: 'lg' | 'xs' = 'lg';
 
 

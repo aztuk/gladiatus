@@ -83,7 +83,8 @@ export class RecruitmentService {
       fatigue: 0,
       fatigueMax: 100,
       moral: 100,
-      virtusMultiplier: candidate.virtus
+      virtusMultiplier: candidate.virtus,
+      rarity: candidate.rarity
     };
   }
 

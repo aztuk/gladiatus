@@ -1,29 +1,93 @@
+@use '../../../core/styles/hud-style.config.scss' as *;
+@use '../../../core/styles/theme.config.scss' as *;
+@use '../../../core/styles/mixins.scss' as *;
+@use 'sass:color';
 .gladiator-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(6, 80px);
+    gap: 16px;
+    justify-content: start;
+    padding: 8px;
 }
 
 .gladiator-card {
-    background: #f5f5f5;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    padding: 0.5rem;
     cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    padding: 4px 0;
     text-align: center;
-    transition: border-color 0.2s;
-    &:hover {
-        border-color: #666;
-    }
-    .avatar {
-        background: #ddd;
+    @include text($color-muted);
+}
+
+.avatar {
+    .wrapper {
         height: 80px;
-        border-radius: 4px;
-        margin-bottom: 0.5rem;
-    }
-    .stats {
-        font-size: 0.8rem;
+        width: 80px;
+        overflow: hidden;
         display: flex;
-        justify-content: space-around;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    position: relative;
+    border-radius: 4px;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 0;
+        background-position: center center;
+        background-image: url('/assets/ui/frame/gladiator-panel.png');
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        border-radius: 4px;
+    }
+    &.mediocre {
+        &::before {
+            background: linear-gradient(to top, $mediocre 30%, color.adjust($mediocre, $lightness: -18%));
+            @include specialBorders($mediocre);
+        }
+    }
+    &.common {
+        &::before {
+            background: linear-gradient(to top, $common 30%, color.adjust($common, $lightness: -18%));
+            @include specialBorders($common);
+        }
+    }
+    &.rare {
+        &::before {
+            background: linear-gradient(to top, $rare 30%, color.adjust($rare, $lightness: -18%));
+            @include specialBorders($rare);
+        }
+    }
+    &.epic {
+        &::before {
+            background: linear-gradient(to top, $epic 30%, color.adjust($epic, $lightness: -18%));
+            @include specialBorders($epic);
+        }
+    }
+    &.legendary {
+        &::before {
+            background: linear-gradient(to top, $legendary 30%, color.adjust($legendary, $lightness: -18%));
+            @include specialBorders($legendary);
+        }
+    }
+    img {
+        max-width: 120%;
+        position: relative;
+        z-index: 2;
     }
 }

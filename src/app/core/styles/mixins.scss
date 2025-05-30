@@ -55,6 +55,15 @@
         font-size: $font-size;
     }
 
+    @mixin text($color: #b6a55c) {
+        font-size: 13px;
+        font-weight: 700;
+        position: relative;
+        font-variation-settings: "wdth" 80;
+        color: $color;
+        @include globalShadow();
+    }
+
     @mixin progressBar($color: #bb7900) {
         background: $color;
         box-shadow: inset 0 4px 0 0 color.adjust($color, $lightness: 5%);
@@ -102,12 +111,8 @@
         }
         .stat-id {
             flex: 1;
-            font-size: 13px;
-            font-weight: 700;
             position: relative;
-            font-variation-settings: "wdth" 80;
-            color: #b6a55c;
-            @include globalShadow();
+            @include text();
         }
         .value-container {
             display: flex;
@@ -115,11 +120,8 @@
         }
         .value {
             text-align: right;
-            color: #af8937;
-            font-size: 13px;
-            font-weight: 700;
+            @include text(#af8937);
             font-variation-settings: "wdth" 100;
-            @include globalShadow();
         }
         .unit {
             font-size: 10px;

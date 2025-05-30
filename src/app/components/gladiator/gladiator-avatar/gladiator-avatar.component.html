@@ -1,6 +1,6 @@
 <div class="gladiator-avatar">
     <!-- <div [class]="getAvatarClass()"><img src="/assets/ui/gladiators/{{origine}}/{{avatarId}}.png" /></div> -->
-    <div [class]="getAvatarClass()"><img src="/assets/ui/gladiators/{{origine}}/avatar-1.png" /></div>
+    <div [class]="getAvatarClass()"><img src="/assets/ui/gladiators/{{origine}}/avatar-{{avatarId}}.png" /></div>
     <div class="name" *ngIf="name">{{ name }}</div>
     <div class="origine" *ngIf="origine">
         <app-icon [icon]="origineIcon[origine]" />

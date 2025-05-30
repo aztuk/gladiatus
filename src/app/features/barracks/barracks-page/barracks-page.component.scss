@@ -1,14 +1,13 @@
 .barracks-container {
     display: flex;
-    flex-direction: column;
     height: 100%;
-    padding: 1rem;
+    position: relative;
+    z-index: 2;
 }
 
 .gladiator-list-wrapper {
     flex: 1;
     overflow-y: auto;
-    margin-bottom: 1rem;
 }
 
 .gladiator-panel-wrapper {

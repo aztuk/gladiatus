@@ -7,9 +7,9 @@
     "baseStatsBounds": {
         "attack": [1, 5],
         "defense": [0, 3],
-        "precision": [40, 75],
-        "critical": [1, 10],
-        "vitesse": [5, 20],
+        "precision": [60, 85],
+        "critical": [1, 5],
+        "vitesse": [5, 12],
         "spectaculaire": [0, 8]
     },
     "weaponSkillBounds": {

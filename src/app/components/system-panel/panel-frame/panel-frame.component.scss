@@ -34,7 +34,7 @@
         background-position: center center;
         background-size: 200%;
         background-image: url('/assets/ui/frame/gladiator-panel.png');
-        opacity: .2;
+        opacity: .9;
     }
     &::before {
         content: '';
@@ -45,7 +45,7 @@
         right: 0;
         z-index: 0;
         border-radius: 4px;
-        @include hudInnerFrame(#574924a8,
+        @include hudInnerFrame(#57492462,
         #d47d30);
     }
     .panel-content {

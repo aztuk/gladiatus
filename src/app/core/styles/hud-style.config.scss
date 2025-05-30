@@ -13,11 +13,11 @@ $hud-element-decoration: inset 0 0 8px 0 rgba(0, 0, 0, 0.089),
 0 0 0px 5px #331c06;
 $hud-element-text-color: #ffdd47;
 $hud-element-text-shadow: drop-shadow(0 0px 1px black) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.336)) drop-shadow(0 0px 0px black);
-$status-ally: #0b5b09;
-$status-enemy: #6f1f1f;
+$status-ally: #067004;
+$status-enemy: #830a0a;
 $status-friendly: #143b17;
 $status-hostile: #532104;
-$status-neutral: $hud-element-background;
+$status-neutral: #383736;
 @mixin hudInnerFrame($color, $border) {
     background: linear-gradient(to top, $color, color.adjust($color, $lightness: 10%));
     @include specialBorders($border);

@@ -1,8 +1,8 @@
 <div class="gladiator-grid">
     <div class="gladiator-card" *ngFor="let glad of gladiators" (click)="onSelect(glad.id)">
-        <div class="avatar"></div>
-        <div class="stats">
-            <pre>{{ glad | json }}</pre>
+        <div class="avatar  {{glad.rarity}}">
+            <div class="wrapper"><img src="/assets/ui/gladiators/{{glad.origine}}/avatar-{{glad.avatarId}}.png" /></div>
         </div>
+        <div class="name">{{glad.name}}</div>
     </div>
 </div>

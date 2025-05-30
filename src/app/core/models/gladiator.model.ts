@@ -86,6 +86,8 @@ export interface Gladiator {
 
   /** Potentiel d’évolution invisible (apprentissage accéléré) */
   virtusMultiplier: number;
+  
+  rarity: string;
 }
 
 /**

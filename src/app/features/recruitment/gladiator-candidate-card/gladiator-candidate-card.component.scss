@@ -12,6 +12,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    border-top-left-radius: 95px;
+    border-top-right-radius: 95px;
     &:after {
         content: '';
         position: absolute;
@@ -19,7 +22,9 @@
         bottom: 0;
         left: 0;
         right: 0;
-        z-index: -1;
+        z-index: 0;
+        border-top-left-radius: 95px;
+        border-top-right-radius: 95px;
         background-position: center center;
         background-image: url('/assets/ui/frame/gladiator-panel.png');
     }
@@ -30,73 +35,69 @@
         bottom: 0;
         left: 0;
         right: 0;
-        z-index: 0;
-        border-radius: 4px;
+        z-index: 1;
+        border-top-left-radius: 95px;
+        border-top-right-radius: 95px;
         @include hudInnerFrame(#4228102c,
-        #d47d30);
+        $mediocre);
     }
     &.mediocre {
         &::before {
-            @include hudInnerFrame(#4228102c,
-            #d47d30);
+            @include hudInnerFrame(rgba($mediocre, .2),
+            $mediocre);
         }
-        &::after {
-            box-shadow: 0 0 32px #d47d30, inset 0 0 32px #d47d308c;
-        }
+        &::after {}
         button {
-            @include hudInnerButton(#d47d30,
-            white);
-        }
-    }
-    &.rare {
-        &::before {
-            @include hudInnerFrame(#4228102c,
-            #299bff);
-        }
-        &::after {
-            filter: hue-rotate(170deg);
-        }
-        button {
-            @include hudInnerButton(#299bff,
-            white);
-        }
-    }
-    &.epic {
-        &::before {
-            @include hudInnerFrame(#4228102c,
-            #7b49ca);
-        }
-        &::after {
-            filter: hue-rotate(230deg);
-        }
-        button {
-            @include hudInnerButton(#7b49ca,
-            white);
-        }
-    }
-    &.legendary {
-        &::before {
-            @include hudInnerFrame(#4228102c,
-            #ecbb34);
-        }
-        &::after {
-            filter: hue-rotate(16deg);
-        }
-        button {
-            @include hudInnerButton(#ecbb34,
+            @include hudInnerButton($mediocre,
             white);
         }
     }
     &.common {
         &::before {
-            @include hudInnerFrame(#4228102c,
-            #42ce3d);
-        }
-        &::after {
-            filter: hue-rotate(56deg);
+            @include hudInnerFrame(rgba($common, .2),
+            $common);
         }
         button {
-            @include hudInnerButton(#42ce3d,
+            @include hudInnerButton($common,
+            white);
+        }
+    }
+    &.rare {
+        &::before {
+            @include hudInnerFrame(rgba($rare, .2),
+            $rare);
+        }
+        &::after {
+            filter: hue-rotate(170deg);
+        }
+        button {
+            @include hudInnerButton($rare,
+            white);
+        }
+    }
+    &.epic {
+        &::before {
+            @include hudInnerFrame(rgba($epic, .2),
+            $epic);
+        }
+        &::after {
+            filter: hue-rotate(230deg);
+        }
+        button {
+            @include hudInnerButton($epic,
+            white);
+        }
+    }
+    &.legendary {
+        &::before {
+            @include hudInnerFrame(rgba($legendary, .2),
+            $legendary);
+        }
+        &::after {
+            filter: hue-rotate(16deg);
+        }
+        button {
+            @include hudInnerButton($legendary,
             white);
         }
     }
@@ -110,6 +111,7 @@ app-gladiator-avatar {
     position: relative;
     z-index: 2;
     margin-bottom: -40px;
+    margin-top: -13px;
 }
 
 app-gladiator-traits {
@@ -120,6 +122,9 @@ app-gladiator-traits {
     background: rgba(black, .4);
     width: 100%;
     padding-top: 24px;
+    position: relative;
+    z-index: 1;
+    height: 100%;
 }
 
 .stats {
